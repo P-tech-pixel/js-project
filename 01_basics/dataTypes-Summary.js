@@ -52,6 +52,40 @@ const myFunction = function() {
 
 */
 
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/* Memory Types : Stack and Heap
+
+On Primitive data types Stack memory is used. When a variable which already have a value  is assigned a new value, on Stack memory, it's copy is created. 
+
+Example: 
+*/
+
+let user01 = "Prashanta"
+let user02 = user01
+
+user02 = "Sanjita"
+
+console.log(user02); // user02 value is Sanjita
+console.log(user01); // user01 value is Prashanta 
+
+// On Non-primitive data types Heap memory is used. On Primitive data types Stack memory is used. When a variable which already have a value  is assigned a new value, on Heap memory, it's value is changed to the latest one. 
+
+let brumUser01 = {
+    name: "Mark", 
+    email: "m.grieb@brumbies.com.au"
+}
+
+let brumUser02 = brumUser01
+
+brumUser02.email = "gribby@brumbies.com.au" // changing the value of email.
+
+console.log(brumUser01); // the value of the variable in Non-primitive data type is change to new one. 
+console.log(brumUser02); 
+
+
+
+
 
 
 
