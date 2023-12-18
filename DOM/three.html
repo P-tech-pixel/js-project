@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+     <div >
+        <h1 id = "title" class = 'heading'> Chai Aur Code </h1>
+     </div>
+
+</body>
+<script>
+    const customDiv = document.createElement('div')   // give a name of the element you want to create in a Parenthesis. 
+    console.log(customDiv);
+
+  //  console.log('NODELIST', customDiv.childNodes);  // to know the nodes list insoide the div. 
+
+  customDiv.className = 'main'
+  customDiv.id = Math.round(Math.random() * 10 + 1)   // creating a random id for the DIV. 
+  customDiv.setAttribute("title", 'Prashanta Code JS')
+  customDiv.style.backgroundColor = 'green'
+  customDiv.style.padding = '12px'
+  // customDiv.innerText = 'Prashanta WIKI'
+
+  const addText = document.createTextNode('Prashanta Text')  // this is a simple way to create a inner Text inside the Div. 
+  customDiv.appendChild(addText)
+
+  document.body.appendChild(customDiv);  // adding a element 'customDiv ' inside the body of the File. 
+
+</script>
+</html>

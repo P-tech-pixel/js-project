@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Chai aur code | DOM </title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+     <ul class ='language'> 
+        <li> JavaScript </li>
+     </ul>
+
+</body>
+
+<script>
+    function addLanguage(langName){
+        const li =  document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language')
+                .appendChild(li)
+    }
+
+    addLanguage('Python')
+    addLanguage('TypeScript')
+
+
+    // Edit the second Element
+
+    // example of selecting the element : 
+    const example = document.querySelector('ul');
+    console.log(example); // see the result in cbrowser console. 
+
+
+   const secondLang = document.querySelector('li:nth-child(2)') // selecting the second items in a li 
+   
+   console.log(secondLang);
+
+   // secondLang.innerHTML = 'Mojo';
+
+   const newLi = document.createElement('li')    // replacing the valiue of the element more optimised way. 
+   newLi.textContent = 'Mojo'
+   secondLang.replaceWith(newLi)
+
+
+   //edit the first Element
+
+   const firstElement = document.querySelector('li:nth-child(1)')
+   console.log(firstElement);
+
+  const newFirstElement = document.createElement('li')
+  newFirstElement.textContent = 'Java'
+  firstElement.replaceWith(newFirstElement)
+
+  //remove the last element
+
+  const lastLanguage = document.querySelector('li:last-child')
+  lastLanguage.remove()
+
+</script>
+</html>
