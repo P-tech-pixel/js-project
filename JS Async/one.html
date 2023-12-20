@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Events</title>
+</head>
+<body>
+       <h1>Greet</h1>
+       <p id="line"></p>
+       <button id="start">Start Greeting</button>
+       <button id="stop">Stop Greeting</button>
+
+</body>
+
+<script>
+   /*
+   // This runs every time until stopped. 
+   setInterval(function(){
+     console.log('Prashanta', Date.now());  // this will keep on running. 
+
+   }, 1000);
+
+   */
+
+   //Another example:
+
+
+   let greet ;      // we have to declare for greet becasue we are using the value of greet two functions. We can't declare it const.  
+   
+   //start:
+   function startGreet(){
+     greet = setInterval(function(a){
+     
+     document.querySelector('#line').innerText = `${a}, ${Date.now()}`;
+    }, 1000, 'Namaste');   // the third is the function parameter. 
+      
+   }
+   
+   // Stop:
+   function stopGreet(){
+     clearInterval(greet);
+     document.querySelector('#line').innerText = 'Greet Stopped!';
+    //  console.log(greet);
+   }
+   
+   document.querySelector('#start').addEventListener('click', startGreet);
+   document.querySelector('#stop').addEventListener('click', stopGreet); // if you declare the function outside, please just give a reference: stopGreet not stopGreet()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+</script>
+
+</html>

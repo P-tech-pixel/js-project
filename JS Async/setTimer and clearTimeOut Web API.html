@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Events</title>
+</head>
+<body>
+       <h1>Chai aur Code</h1>
+       <button id="stop">Stop</button>
+</body>
+
+<script>
+    // calling the Web API functions: 
+
+    // 1. 
+    setTimeout(function(){
+        console.log('1st Prashanta');  // printing the name after 2 sec of browser reload. 
+    }, 2000)
+
+    // or,
+
+    function sayPrashanta(){
+        console.log('2nd Prashanta');
+    }  
+
+    // call the web API:
+    setTimeout(sayPrashanta(), 4000);
+    
+    // lets clear the set timeout when the button is clicked:
+
+    function changeText(){
+        document.querySelector('h1').append(': Best Web series');
+    }
+
+    const changeMe = setTimeout(changeText, 4000 ); // we need to declare the setTimer as variable
+     
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe); // we need to give a reference (changeMe) to clear. 
+        console.log('STOPPED')
+    } )
+
+
+</script>
+
+</html>
