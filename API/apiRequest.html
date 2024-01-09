@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>API</title>
+</head>
+<body>
+   
+
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/P-tech-pixel'   
+    const xhr = new  XMLHttpRequest();                   // AJAX request
+    xhr.open('GET', requestUrl);                         
+    xhr.onreadystatechange = function(){
+      console.log(xhr.readyState);
+      if(xhr.readyState == 4 ){
+        const data = JSON.parse(this.responseText)  // the value comes in a responseText and the data type is String not Object. We need to convert to Object type. 
+        console.log( typeof data);  // Check the Data Types after conversion
+        console.log(data.avatar_url);  // using the key avatar_url to get the value. 
+      }
+    }
+    xhr.send();
+
+</script>
+
+</html>
